@@ -1,0 +1,116 @@
+#include <stdio.h>
+//#define tamañoArreglo 11
+
+int main(void) {
+
+int contadorWhile =0;
+char palabra[] = "Mundooooo";
+
+printf("tamanio palabra: %lu\n",sizeof(palabra));
+ 
+for(int contador=0; contador<sizeof(palabra)-1;contador++)
+{
+  printf("%c\n",palabra[contador]);
+}
+
+
+while(contadorWhile < sizeof(palabra)-1)
+{
+  if(contadorWhile == 5){    
+    break;
+  }
+  printf("%c\n",palabra[contadorWhile]);  
+  contadorWhile = contadorWhile+1;
+}
+
+int entrada = 0;
+  do{
+      printf("Introduzca un numero\nSi desea salir digite \"20\"\n");
+      scanf("%d",&entrada);
+      if (entrada==0)
+      {
+        printf("%d es un numero neutro\n",entrada);
+      }else if (entrada>0)
+      { 
+        printf("%d es un numero positivo\n",entrada);
+      }else
+      {
+         printf("%d es un numero negativo\n",entrada);
+      }
+
+    } while (entrada != 20);
+
+  return 0;
+}
+
+
+//Otro punto lenguaje c
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "main.h"
+#include "operacion.h"
+
+int main(void) 
+{
+  int salida = 0;
+  int a=0;
+  int b=0;
+  int total = 0;
+
+  do{
+    printf("Elija alguna de las siguientes opciones.\n");
+    printf("1. Sumar 2 numeros\n");
+    printf("2. Restar 2 numeros\n");
+    printf("3. Multiplicar 2 numeros\n");
+    printf("4. Dividir 2 numeros\n");
+    printf("5. Salir\n");
+
+    scanf("%d",&salida);
+
+    switch(salida)
+    {
+      case 1:
+        printf("Ingrese el primer numero: ");
+        scanf("%d",&a);
+        printf("Ingrese el primer numero: ");
+        scanf("%d",&b);
+
+        total = sumar(a,b);
+        printf("El resultado de la suma es: %d\n",total);
+        break;
+      case 2:
+        printf("Ingrese el primer numero: ");
+        scanf("%d",&a);
+        printf("Ingrese el primer numero: ");
+        scanf("%d",&b);
+
+        total = restar(a,b);
+        printf("El resultado de la resta es: %d\n",total);
+        break;
+      case 3:
+        printf("Ingrese el primer numero: ");
+        scanf("%d",&a);
+        printf("Ingrese el primer numero: ");
+        scanf("%d",&b);
+
+        total = multiplicar(a,b);
+        printf("El resultado de la multiplicacion es: %d\n",total);
+        break;
+      case 4:
+      printf("Ingrese el primer numero: ");
+        scanf("%d",&a);
+        printf("Ingrese el primer numero: ");
+        scanf("%d",&b);
+
+        total = dividir(a,b);
+        printf("El resultado de la division es: %d\n",total);
+        break;
+      case 5:
+        printf("Regresa Pronto!!!\n");
+        break;
+      default:
+        printf("Ingreso una opcion NO valida\n");
+        break;
+
+    }
